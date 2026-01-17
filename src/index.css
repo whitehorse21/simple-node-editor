@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply m-0 p-0 box-border;
+    }
+
+    body {
+        @apply font-sans antialiased overflow-hidden;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    }
+}
+
+@layer utilities {
+
+    /* Custom styles for React Flow */
+    .react-flow__handle {
+        @apply cursor-crosshair;
+    }
+
+    .react-flow__edge-path {
+        @apply stroke-[2px];
+    }
+
+    .react-flow__edge.selected .react-flow__edge-path {
+        @apply stroke-indigo-500 stroke-[3px];
+    }
+
+    .react-flow__node {
+        @apply cursor-grab;
+    }
+
+    .react-flow__node:active {
+        @apply cursor-grabbing;
+    }
+
+    /* Scrollbar Styles */
+    .node-palette::-webkit-scrollbar {
+        @apply w-1.5;
+    }
+
+    .node-palette::-webkit-scrollbar-track {
+        @apply bg-gray-100;
+    }
+
+    .node-palette::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 rounded-sm;
+    }
+
+    .node-palette::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-400;
+    }
+
+    /* Animations */
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes toastSlideIn {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes contextMenuFadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
